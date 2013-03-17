@@ -37,3 +37,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+gem 'devise'
+gem 'activerecord-mysql2-adapter'

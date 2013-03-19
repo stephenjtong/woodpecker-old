@@ -1,4 +1,4 @@
-Rss::Application.routes.draw do
+Woodpecker::Application.routes.draw do
   get "page/index"
 
   devise_for :users

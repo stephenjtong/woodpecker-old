@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Rss::Application.load_tasks
+Woodpecker::Application.load_tasks

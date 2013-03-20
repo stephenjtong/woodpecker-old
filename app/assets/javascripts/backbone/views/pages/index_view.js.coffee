@@ -18,3 +18,18 @@ class Woodpecker.Views.Pages.IndexView extends Backbone.View
     @addAll()
 
     return this
+
+  events: =>
+    "click #lhn-add-subscription": "quick_subcrib"
+    "click #quick-add-close": "quick_add_close"
+
+  quick_add_close: =>
+    $('#quick-add-bubble-holder').attr('class', 'hidden')
+
+  quick_subcrib: =>
+    if $('#quick-add-bubble-holder').attr('class') == 'hidden'
+        $('#quick-add-bubble-holder').attr('class', 'quick-add-bubble-holder')
+    else
+        $('#quick-add-bubble-holder').attr('class', 'hidden')
+
+

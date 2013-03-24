@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130318154153) do
   end
 
   create_table "feeds", :force => true do |t|
+    t.string   "hashed_url", :limit => 50,   :null => false
     t.string   "name",       :limit => 500,  :null => false
     t.string   "url",        :limit => 1000, :null => false
     t.datetime "created_at",                 :null => false
@@ -44,5 +45,10 @@ ActiveRecord::Schema.define(:version => 20130318154153) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "users_feeds", :id => false, :force => true do |t|
+    t.integer "user_id", :null => false
+    t.integer "feed_id", :null => false
+  end
 
 end

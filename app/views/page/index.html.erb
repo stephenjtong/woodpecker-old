@@ -1,9 +1,13 @@
-<div id = 'pages'></div>
+<% if user_signed_in? %>
+  <div id = 'pages'></div>
 
-<script type="text/javascript">
-  $(function() {
-      // Blog is the app name
-      window.router = new Woodpecker.Routers.PagesRouter({});
-      Backbone.history.start();
-      });
-</script>
+  <script type="text/javascript">
+    $(function() {
+        // Blog is the app name
+        window.router = new Woodpecker.Routers.PagesRouter({});
+        Backbone.history.start();
+        });
+  </script>
+<% else %>
+  Please <%= link_to('login', new_user_session_path)  %>   first
+<%end%>

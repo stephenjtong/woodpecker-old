@@ -11,6 +11,9 @@ class Woodpecker.Views.Pages.IndexView extends Backbone.View
     @collection = new Woodpecker.Collections.FeedsCollection
     @model = new @collection.model() 
     console.log(@model)
+    @model.bind("change:errors", () =>
+            this.render()
+    )
   addAll: () =>
     @options.pages.each(@addOne)
 
@@ -32,12 +35,11 @@ class Woodpecker.Views.Pages.IndexView extends Backbone.View
   save: (e) ->  
     e.preventDefault() 
     e.stopPropagation() 
+    console.log(e)
     @model.unset("errors") 
-    @model.set('url', 'xxx')
-    @model.set('name', 'xxx')
+    @model.set('url', $("#url").val())
     @collection.create(@model.toJSON(),
             success: (feed) => 
-                @model = feed
             error: (post, jqXHR) => 
                 @model.set({errors: $.parseJSON(jqXHR.responseText)})
     )

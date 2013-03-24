@@ -11,7 +11,12 @@ class FeedsController < ApplicationController
     subscription = Subscription.new
     subscription.feed = @feed
     subscription.feed_name = 'google'
-    current_user.subscriptions << subscription
+    begin
+      current_user.subscriptions << subscription
+    rescue ActiveRecord::RecordNotUnique
+    end
     current_user.save
+    success_json
+
   end
 end

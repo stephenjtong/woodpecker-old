@@ -3,7 +3,7 @@ class Woodpecker.Models.Feed extends Backbone.Model
 
   defaults:
     url: null
-    name: null
+    name: "google"
 
 class Woodpecker.Collections.FeedsCollection extends Backbone.Collection
   model: Woodpecker.Models.Feed

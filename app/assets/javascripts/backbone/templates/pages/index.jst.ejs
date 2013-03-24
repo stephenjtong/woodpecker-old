@@ -2,12 +2,14 @@
   <div class="row-fluid">
     <div class="span2">
       <button type="button" class="btn btn-success" id='lhn-add-subscription'>Subscribe</button>
+      <form id="new-feed" name="feed">
       <div id="quick-add-bubble-holder" class="hidden" style="left: 16px; top: 164px;"><form id="quick-add-form" action="" _lpchecked="1"><span id="quick-add-instructions">Enter a search term to find feeds or paste a feed url.</span>
       <div id="quick-add-close"></div>
       <div id="quick-add-input-div">
-        <input type="text" name="quickadd" id="quickadd" autocomplete="off" spellcheck="false" style="width: 225.600004196167px;">
-        <span class="btn" style="margin-left: 3px;">Add</span>
+        <input type="text" name="url" id="url" autocomplete="off" spellcheck="false" style="width: 225.600004196167px;">
+        <input type="submit" class="btn" style="margin-left: 3px;" value = "Add" />
       </div>
+      </form>
       
       <div id="quick-add-helptext">e.g., googleblog.blogspot.com or cnn</div></form></div>
     </div>

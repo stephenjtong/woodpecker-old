@@ -6,6 +6,11 @@ class Woodpecker.Views.Pages.IndexView extends Backbone.View
   initialize: () ->
     @options.pages.bind('reset', @addAll)
 
+  constructor: (options) ->
+    super(options)
+    @collection = new Woodpecker.Collections.FeedsCollection
+    @model = new @collection.model() 
+    console.log(@model)
   addAll: () =>
     @options.pages.each(@addOne)
 
@@ -22,6 +27,20 @@ class Woodpecker.Views.Pages.IndexView extends Backbone.View
   events: =>
     "click #lhn-add-subscription": "quick_subcrib"
     "click #quick-add-close": "quick_add_close"
+    "submit #new-feed": "save"
+
+  save: (e) ->  
+    e.preventDefault() 
+    e.stopPropagation() 
+    @model.unset("errors") 
+    @model.set('url', 'xxx')
+    @model.set('name', 'xxx')
+    @collection.create(@model.toJSON(),
+            success: (feed) => 
+                @model = feed
+            error: (post, jqXHR) => 
+                @model.set({errors: $.parseJSON(jqXHR.responseText)})
+    )
 
   quick_add_close: =>
     $('#quick-add-bubble-holder').attr('class', 'hidden')

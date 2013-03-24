@@ -1,7 +1,11 @@
 Woodpecker::Application.routes.draw do
+  get "feeds/new"
+
   get "page/index"
 
   devise_for :users
+
+  resources :feeds
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

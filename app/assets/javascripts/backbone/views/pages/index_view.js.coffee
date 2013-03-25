@@ -30,14 +30,13 @@ class Woodpecker.Views.Pages.IndexView extends Backbone.View
   events: =>
     "click #lhn-add-subscription": "quick_subcrib"
     "click #quick-add-close": "quick_add_close"
-    "submit #new-feed": "save"
+    "submit #quick-add-form": "save"
 
   save: (e) ->  
     e.preventDefault() 
     e.stopPropagation() 
     console.log(e)
     @model.unset("errors") 
-    @model.set('url', $("#url").val())
     @collection.create(@model.toJSON(),
             success: (feed) => 
             error: (post, jqXHR) => 

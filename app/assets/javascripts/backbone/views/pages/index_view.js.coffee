@@ -35,8 +35,8 @@ class Woodpecker.Views.Pages.IndexView extends Backbone.View
   save: (e) ->  
     e.preventDefault() 
     e.stopPropagation() 
-    console.log(e)
     @model.unset("errors") 
+    @model.set('url', $("#url").val()) 
     @collection.create(@model.toJSON(),
             success: (feed) => 
             error: (post, jqXHR) => 

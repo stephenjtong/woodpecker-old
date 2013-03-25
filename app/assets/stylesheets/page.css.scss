@@ -55,5 +55,138 @@
   font-style: italic;
 }
 
+.message-area-container {
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  text-align: center;
+  left: 50%;
+}
+
+.goog-inline-block {
+  position: relative;
+  display: -moz-inline-box;
+  display: inline-block;
+}
+
+#loading-area {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.jfk-butterBar {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  -webkit-transition: all 0 linear 1s,opacity 1s;
+  -moz-transition: all 0 linear 1s,opacity 1s;
+  -o-transition: all 0 linear 1s,opacity 1s;
+  transition: all 0 linear 1s,opacity 1s;
+  border-style: solid;
+  border-width: 0;
+  font-size: 11px;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+}
+
+.jfk-butterBar-info {
+  background-color: #f9edbe;
+  border-color: #f0c36d;
+  color: #333;
+}
+
+.jfk-butterBar-shown {
+  -webkit-transition: opacity .218s;
+  -moz-transition: opacity .218s;
+  -o-transition: opacity .218s;
+  transition: opacity .218s;
+  border-width: 1px;
+  height: 14px;
+  opacity: 1;
+  visibility: visible;
+  padding: 6px 16px;
+}
+
+
+
+
+#message-area-container {
+  z-index: 10001;
+}
+
+.message-area-container {
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  text-align: center;
+  left: 50%;
+}
+
+.goog-inline-block {
+  position: relative;
+  display: -moz-inline-box;
+  display: inline-block;
+}
+
+.goog-inline-block {
+  position: relative;
+  display: inline-block;
+}
+
+
+::-webkit-scrollbar {
+  height: 16px;
+  overflow: visible;
+  width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.2);
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 1px 1px 1px 6px;
+  min-height: 28px;
+  padding: 100px 0 0;
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+}
+
+::-webkit-scrollbar-button {
+  height: 0;
+  width: 0;
+}
+
+::-webkit-scrollbar-track {
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 0 0 0 4px;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.message-area-container {
+  text-align: center;
+}
+
+body {
+  color: #000;
+}
+
+
+html, body, input {
+  font-family: arial,sans-serif;
+}
+
+html, body {
+  font-size: 90%;
+}
 
 

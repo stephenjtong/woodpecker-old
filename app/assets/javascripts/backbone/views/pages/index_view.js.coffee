@@ -33,12 +33,15 @@ class Woodpecker.Views.Pages.IndexView extends Backbone.View
     "submit #quick-add-form": "save"
 
   save: (e) ->  
+    $('#quick-add-bubble-holder').attr('class', 'hidden')
+    $('#loading-area-container').removeClass('hidden')
     e.preventDefault() 
     e.stopPropagation() 
     @model.unset("errors") 
     @model.set('url', $("#url").val()) 
     @collection.create(@model.toJSON(),
             success: (feed) => 
+                $('#loading-area-container').addClass('hidden')
             error: (post, jqXHR) => 
                 @model.set({errors: $.parseJSON(jqXHR.responseText)})
     )
